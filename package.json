@@ -1,0 +1,20 @@
+{
+  "name": "crudapi",
+  "version": "0.0.1",
+  "description": "a simple CRUD API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pavel Mihailov",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.17"
+  }
+}
