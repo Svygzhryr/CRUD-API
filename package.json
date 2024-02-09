@@ -12,9 +12,8 @@
   "devDependencies": {
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "@types/node": "^20.11.17"
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.17",
+    "nodemon": "^3.0.3"
   }
 }
