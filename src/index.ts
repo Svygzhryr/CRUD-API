@@ -1,5 +1,11 @@
 import * as http from "http";
-import { handleGet, handleDelete, handlePost, handlePut } from "./methods";
+import {
+  handleGet,
+  handleDelete,
+  handlePost,
+  handlePut,
+  notFound,
+} from "./methods.ts";
 
 const port = process.env.PORT || 3000;
 
@@ -17,12 +23,10 @@ const server = http.createServer((req, res) => {
     case "DELETE":
       handleDelete(req, res);
       break;
+    default:
+      notFound(req, res);
+      break;
   }
-
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "application/json");
-  res.write(JSON.stringify({ message: "Greetings from server!" }));
-  res.end();
 });
 
 server.listen(port, () => {
