@@ -1,0 +1,24 @@
+[
+  {
+    "id": "6f6748ce-e71c-4b4c-a555-c523817ff8c7",
+    "username": "mokujin",
+    "age": 20,
+    "hobbies": ["watching paint dry"]
+  },
+  {
+    "id": "87ea3752-bfac-4f45-8ef2-d13cd0c3525f",
+    "username": "heihachi",
+    "age": 65,
+    "hobbies": [
+      "throwing people off the cliff",
+      "beating people with the devil gene"
+    ]
+  },
+  {
+    "id": "b8f9c2b7-7ae0-479e-a0bc-1d1e081b843e",
+    "username": "nina",
+    "age": 27,
+    "hobbies": []
+  },
+  { "age": 20, "id": "e299bce5-1625-4d3e-844b-d374ec49916e" }
+]

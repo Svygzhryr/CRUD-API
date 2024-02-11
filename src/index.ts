@@ -1,4 +1,5 @@
 import * as http from "http";
+
 import {
   handleGet,
   handleDelete,
@@ -6,10 +7,13 @@ import {
   handlePut,
   notFound,
 } from "./methods.ts";
+import users from "./users.json";
+import { ICustomIncomingMessage } from "./types/types.ts";
 
 const port = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((req: ICustomIncomingMessage, res) => {
+  req.users = users;
   switch (req.method) {
     case "GET":
       handleGet(req, res);
