@@ -6,9 +6,9 @@ import {
   handlePost,
   handlePut,
   notFound,
-} from "./methods.ts";
+} from "./methods";
 import users from "./users.json";
-import { ICustomIncomingMessage } from "./types/types.ts";
+import { ICustomIncomingMessage } from "./types/types";
 
 const port = process.env.PORT || 3000;
 
