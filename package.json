@@ -4,7 +4,8 @@
   "description": "a simple CRUD API",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "start:dev": "nodemon src/index.ts",
+    "start:prod": "npx tsc && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pavel Mihailov",
