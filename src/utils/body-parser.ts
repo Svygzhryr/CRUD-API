@@ -8,10 +8,11 @@ export const bodyParser = async (request: ICustomIncomingMessage) => {
         body += chunk;
       });
       request.on("end", () => {
-        resolve(JSON.parse(body));
+        const result = JSON.parse(body);
+        resolve(result);
       });
     } catch (err) {
-      reject(err);
+      console.log(err);
     }
   });
 };

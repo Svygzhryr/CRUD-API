@@ -13,13 +13,19 @@ export const handleGet = (
   const baseUrl = req.url.substring(0, req.url.lastIndexOf("/") + 1);
   const id = req.url.split("/")[3];
   const isIdCorrect = validate(id);
-
   switch (true) {
     default:
       res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(
-        JSON.stringify({ title: "Not Found", message: "Route not found" })
-      );
+      if (!isIdCorrect && baseUrl === "/api/users/") {
+        res.end(
+          JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
+        );
+      } else {
+        res.end(
+          JSON.stringify({ title: "Not Found", message: "Route not found" })
+        );
+      }
+
       break;
 
     case req.url === "/api/users":
@@ -27,13 +33,6 @@ export const handleGet = (
       res.setHeader("Content-type", "application/json");
       res.write(JSON.stringify(req.users));
       res.end();
-      break;
-
-    case !isIdCorrect && req.url === "/api/users":
-      res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(
-        JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
-      );
       break;
 
     case baseUrl === "/api/users/" && isIdCorrect:
@@ -89,7 +88,7 @@ export const handlePost = async (
     res.end(
       JSON.stringify({
         title: "Not Found",
-        message: "User with such UserId does not exist",
+        message: "Route not found",
       })
     );
   }
@@ -102,13 +101,18 @@ export const handlePut = async (
   const baseUrl = req.url.substring(0, req.url.lastIndexOf("/") + 1);
   const id = req.url.split("/")[3];
   const isIdCorrect = validate(id);
-
   switch (true) {
     default:
       res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(
-        JSON.stringify({ title: "Not Found", message: "Route not found" })
-      );
+      if (!isIdCorrect && baseUrl === "/api/users/") {
+        res.end(
+          JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
+        );
+      } else {
+        res.end(
+          JSON.stringify({ title: "Not Found", message: "Route not found" })
+        );
+      }
       break;
 
     case req.url === "/api/users":
@@ -116,13 +120,6 @@ export const handlePut = async (
       res.setHeader("Content-type", "application/json");
       res.write(JSON.stringify(req.users));
       res.end();
-      break;
-
-    case !isIdCorrect && req.url === "/api/users":
-      res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(
-        JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
-      );
       break;
 
     case baseUrl === "/api/users/" && isIdCorrect:
@@ -135,7 +132,10 @@ export const handlePut = async (
         if (index === -1) {
           res.writeHead(404, { "Content-Type": "application/json" });
           res.end(
-            JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
+            JSON.stringify({
+              title: "Not Found",
+              message: "User with such ID does not exist",
+            })
           );
         } else {
           req.users[index] = { id, ...body };
@@ -163,23 +163,22 @@ export const handleDelete = (
   const baseUrl = req.url.substring(0, req.url.lastIndexOf("/") + 1);
   const id = req.url.split("/")[3];
   const isIdCorrect = validate(id);
-
+  console.log(baseUrl);
   switch (true) {
     default:
       res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(
-        JSON.stringify({ title: "Not Found", message: "Route not found" })
-      );
+      if (!isIdCorrect && baseUrl === "/api/users/") {
+        res.end(
+          JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
+        );
+      } else {
+        res.end(
+          JSON.stringify({ title: "Not Found", message: "Route not found" })
+        );
+      }
       break;
 
-    case !isIdCorrect:
-      res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(
-        JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
-      );
-      break;
-
-    case baseUrl === "/api/users" && isIdCorrect:
+    case baseUrl === "/api/users/" && isIdCorrect:
       const index = req.users.findIndex((user) => {
         return user.id === id;
       });
@@ -187,7 +186,10 @@ export const handleDelete = (
       if (index === -1) {
         res.writeHead(404, { "Content-Type": "application/json" });
         res.end(
-          JSON.stringify({ title: "Not Found", message: "UserId is invalid" })
+          JSON.stringify({
+            title: "Not Found",
+            message: "No user with such id",
+          })
         );
       } else {
         req.users.splice(index, 1);

@@ -9,15 +9,13 @@
     "id": "87ea3752-bfac-4f45-8ef2-d13cd0c3525f",
     "username": "heihachi",
     "age": 65,
-    "hobbies": [
-      "throwing people off the cliff",
-      "beating people with the devil gene"
-    ]
+    "hobbies": ["throwing people off the cliff"]
   },
+
   {
-    "id": "b8f9c2b7-7ae0-479e-a0bc-1d1e081b843e",
-    "username": "nina",
-    "age": 27,
-    "hobbies": []
+    "age": 24,
+    "username": "jin",
+    "hobbies": [],
+    "id": "ae6be6f8-007b-41b7-a198-2a0efff79994"
   }
 ]
