@@ -1,0 +1,21 @@
+[
+  {
+    "id": "6f6748ce-e71c-4b4c-a555-c523817ff8c7",
+    "username": "mokujin",
+    "age": 20,
+    "hobbies": ["watching paint dry"]
+  },
+  {
+    "id": "87ea3752-bfac-4f45-8ef2-d13cd0c3525f",
+    "username": "heihachi",
+    "age": 65,
+    "hobbies": ["throwing people off the cliff"]
+  },
+
+  {
+    "age": 24,
+    "username": "jin",
+    "hobbies": [],
+    "id": "ae6be6f8-007b-41b7-a198-2a0efff79994"
+  }
+]
